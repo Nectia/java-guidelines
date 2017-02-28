@@ -144,4 +144,38 @@ rc (release candidate) o release.
 
 ### 7.2 Git
 
+[Cheatsheeps de git](https://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/)
+
+#### 7.2.1 Gitflow
+
+[Gitflow](https://danielkummer.github.io/git-flow-cheatsheet/index.html) es utilizado en los proyectos que versionen con Git.
+
+Las ramas deben ser creadas con la nomenclatura X-Y-Z, donde:
+> X: Es el nombre corto del proyecto
+> Y: Es el numero de la funcionalidad en el administrador de tareas (ej. planio)
+> Z: Es una descripcion corta de la tarea
+
+> Por ejemplo, si quisieramos crear un login para nuestro proyecto Gestor de copias que esta representada con el numero 13098, deberiamos crear
+> una rama con la siguiente nomenclatura.
+
+```
+gestcop-13098-crear_login (note la separacion con guion bajo en la descripcion)
+```
+
+Al comenzar a trabajar en una nueva funcionalidad de seben realizar los siguientes pasos:
+- Se debe crear una rama de funcionalidad, que esta acorde a la misma creada en el gestor de tareas (ej. planio)
+- A partir de la rama de funcionalidad se debe crear una rama por tarea 
+
+Los pasos para crear una nueva rama son los siguientes. Es importante recordar que se utiliza gitflow para esto:
+
+1. Si el proyecto es nuevo, debemos inicializar gitflow con la siguiente instruccion. 
+```git flow init -d```
+Esto permite crear la estructura de ramas por defecto (master, develop, hotfix, etc).
+2. Luego en la rama 'develop' creamos un nuevo feature de la siguiente forma:
+```git flow feature start [rama-feature]```
+Esto crear una nueva rama con nombre [rama-feature], y nos posicionara en la misma
+3. Una vez que terminemos nuestro feature lo damos por finalizado con la instruccion
+```git flow feature finish [rama-feature]```
+
+
 ### 7.3 SVN (Deprecado)
